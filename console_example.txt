@@ -1,0 +1,16 @@
+class Task:
+    add()
+
+    delete()
+
+commands = {
+    add: Task.add(),
+    delete: Task:delete()
+    }
+
+while True:
+    if command in commands.keys():
+        commands[command]
+    else:
+        print(please enter a valid command)
+
