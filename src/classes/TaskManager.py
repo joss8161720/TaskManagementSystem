@@ -1,4 +1,4 @@
-from classes.Task import *
+from Task import *
 
 class TaskManager:
 
@@ -12,10 +12,32 @@ class TaskManager:
             print("Loading an existing instance")
         return cls._instance
     
-    def __init__(self, tasks=[], observers=[]):
-        self.tasks = tasks
-        self.observers = observers
+    def __init__(self):
+        self.tasks = []
+        self.observers = []
 
     def add_tasks():
-        pass
+        print("Creating Task")
+        name_input = input("Set Task Name: ")
+        due_date_input = input("Set Due Date (e.g 01/01/2025): ")
+        category_input = input("Set Category: ")
+        priority_input = input("Set Priority Level (High/Medium/Low): ")
+        dependencies_input = input("Set Dependencies (Tasks to be completed before this task, press enter for no dependencies): ")
 
+        dependencies_list = dependencies_input.split(" ")
+
+        
+        task = Task(
+            name_input,
+            due_date_input,
+            priority_input,
+            False,
+            dependencies_list
+        )
+
+        print(f"Task name: {task.name}\nTask due date: {task.due_date}\nTask category: {task.category}\nTask priority: {task.priority}\nTask dependencies: {task.dependencies}")
+
+
+
+    add_tasks()
+        

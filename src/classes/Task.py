@@ -1,8 +1,7 @@
 class Task:
-    def __init__(self,name, due_date, user, category, priority, completed, dependencies):
+    def __init__(self,name, due_date, category, priority, completed, dependencies=[]):
         self.name = name 
         self.due_date = due_date
-        self.user = user
         self.category = category
         self.priority = priority
         self.completed = False
@@ -13,3 +12,4 @@ class Task:
             print("Task is not completed")
         else:
             print("Task is completed")
+
