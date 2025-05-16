@@ -1,40 +1,155 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>440</x><y>150</y><w>200</w><h>70</h></coordinates><panel_attributes>TaskApp
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>290</y>
+      <w>350</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>TaskManager
 --
-- manager: TaskManager
---
-+ run()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>310</y><w>200</w><h>160</h></coordinates><panel_attributes>TasManager
---
-- tasks: List[Task]
-- observers: List[TaskObserver]
+- tasks: list[Task]
+- observers: list[TaskObserver]
+- instance: TaskManager
 --
 + add_task()
 + view_tasks()
 + mark_completed()
-+ find_task()
 + register_observer()
 + notify_oberver()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>710</y><w>160</w><h>180</h></coordinates><panel_attributes>Task
++ new(): TaskManager # t = TaskManager()
++ getInstance()      # t = TaskManager.getInstance()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>570</y>
+      <w>240</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Logger
+--
++ notify(task: TaskManager)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>490</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>570</y>
+      <w>260</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>180.0;10.0;240.0;10.0;240.0;180.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>620</x>
+      <y>520</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Observer
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>800</x>
+      <y>310</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Facade
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>490</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>640</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Task
 --
 - title: str
 - due_date: str
 - category: str
 - priority: int
 - completed: bool
-- depedencies: List[Task]
+- dependencies: list[tasks]
 --
-+ can_complete()
-+ mark_completed()
-+ __str__()
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>520</y><w>130</w><h>50</h></coordinates><panel_attributes>TaskObserver
---
-+ notify(task)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>620</y><w>100</w><h>50</h></coordinates><panel_attributes>Logger
---
-+ notify()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>210</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>460</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>560</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>530</y><w>240</w><h>320</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;10;220;10;220;300;10;300</additional_attributes></element><element><id>UMLNote</id><coordinates><x>660</x><y>620</y><w>130</w><h>30</h></coordinates><panel_attributes>Concrete Observer
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>650</x><y>150</y><w>90</w><h>30</h></coordinates><panel_attributes>Facade
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>650</x><y>310</y><w>90</w><h>30</h></coordinates><panel_attributes>Singleton
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>650</x><y>190</y><w>140</w><h>40</h></coordinates><panel_attributes>Main loop is writen
-within the run function
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>660</x><y>660</y><w>130</w><h>40</h></coordinates><panel_attributes>Logger inherits from
-TaskObserver
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>460</y><w>30</w><h>270</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element></diagram>
++ status()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>530</x>
+      <y>130</y>
+      <w>60</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Actor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>800</x>
+      <y>350</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Singleton
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>170</y>
+      <w>40</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
