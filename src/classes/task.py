@@ -7,3 +7,8 @@ class Task:
         self.priority = priority
         self.completed = False
 
+    def status(self):
+        if self.completed == False:
+            print("Task is not completed")
+        else:
+            print("Task is completed")
