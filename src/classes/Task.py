@@ -1,5 +1,5 @@
 class Task:
-    def __init__(self,name, due_date, category, priority, completed, dependencies=[]):
+    def __init__(self,name, due_date, category, priority, completed, dependencies):
         self.name = name 
         self.due_date = due_date
         self.category = category
