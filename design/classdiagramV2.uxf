@@ -1,16 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.1">
-  <help_text/>
-  <zoom_level>10</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>440</x>
-      <y>310</y>
-      <w>350</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>TaskManager
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>440</x><y>310</y><w>350</w><h>190</h></coordinates><panel_attributes>TaskManager
 --
 - tasks: list[Task]
 - observers: list[TaskObserver]
@@ -21,88 +9,11 @@
 + mark_completed()
 + register_observer()
 + notify_oberver()
-+ new(): TaskManager</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>540</x>
-      <y>590</y>
-      <w>240</w>
-      <h>50</h>
-    </coordinates>
-    <panel_attributes>Logger
++ new(): TaskManager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>590</y><w>240</w><h>50</h></coordinates><panel_attributes>Logger
 --
-+ notify(task: TaskManager)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>590</x>
-      <y>490</y>
-      <w>30</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>600</x>
-      <y>590</y>
-      <w>260</w>
-      <h>200</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>180.0;10.0;240.0;10.0;240.0;180.0;10.0;180.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>620</x>
-      <y>540</y>
-      <w>150</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Observer
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>800</x>
-      <y>330</y>
-      <w>90</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Facade
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
-      <y>490</y>
-      <w>30</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>410</x>
-      <y>660</y>
-      <w>200</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes>Task
++ notify(task: TaskManager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>490</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>590</y><w>260</w><h>200</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>180;10;240;10;240;180;10;180</additional_attributes></element><element><id>UMLNote</id><coordinates><x>620</x><y>540</y><w>150</w><h>30</h></coordinates><panel_attributes>Observer
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>800</x><y>330</y><w>90</w><h>30</h></coordinates><panel_attributes>Facade
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>490</y><w>30</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>660</y><w>200</w><h>160</h></coordinates><panel_attributes>Task
 --
 - title: str
 - due_date: str
@@ -112,43 +23,7 @@ bg=blue</panel_attributes>
 - dependencies: list[tasks]
 --
 + status()
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>530</x>
-      <y>150</y>
-      <w>60</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>Actor</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>800</x>
-      <y>370</y>
-      <w>90</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Singleton
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>550</x>
-      <y>190</y>
-      <w>40</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>lt=-
++ __str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>530</x><y>150</y><w>60</w><h>110</h></coordinates><panel_attributes>Actor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>800</x><y>370</y><w>90</w><h>30</h></coordinates><panel_attributes>Singleton
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>190</y><w>40</w><h>140</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
-  </element>
-</diagram>
+m2=1</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element></diagram>
