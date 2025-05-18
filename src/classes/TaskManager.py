@@ -83,7 +83,7 @@ class TaskManager:
 
         else:
             print("Your tasks:")
-            
+
             #loops over list tasks and keeps track of the index of each item
             for i, task in enumerate(self.tasks, 1):
                 print(f"Task {i}:{task}")
@@ -94,6 +94,7 @@ class TaskManager:
             if task.name == task_name:
                 self.tasks.remove(task)
                 print(f"Task '{task_name}' has been completed and removed")
+                return
             else:
                 print(f"No task named '{task_name}'")
 
