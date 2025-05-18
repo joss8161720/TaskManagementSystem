@@ -1,6 +1,8 @@
 #import Task module
 from classes.Task import *
 
+categories_list = []
+
 class TaskManager:
 
     #sets _instance to none to create first singleton
@@ -23,6 +25,7 @@ class TaskManager:
         if not hasattr(self, "tasks"):
             self.tasks = []
             self.observers = []
+            self.categories = []
 
     #function for adding tasks, using collection of inputs to build an object
     def add_tasks(self):
@@ -34,6 +37,8 @@ class TaskManager:
         dependencies_input = input("Set Dependencies (Tasks to be completed before this task comma seperated, press enter for no dependencies) >> ")
         print(" ")
         
+        categories_list.append(category_input)
+
 
         #need to keep adding to dependencies to make them usefull
         #splits a sting into a list then remakes it as a string, if it equals "" return "" as value
@@ -96,7 +101,17 @@ class TaskManager:
             else:
                 print(f"No task named '{task_name}'")
 
-    def sort_tasks(self):
-        if self.category == self.category:
-            print(f"{self.category}: {self.category}")
         
+ 
+
+    def sort(self):
+        lc = len(categories_list)
+        for n in range(lc):
+            print(f"{categories_list[n]}:{str(self.tasks)}")
+            for category in self.categories:
+                if category == categories_list[n]:
+                    print("asdad")
+                    return
+                
+                else:
+                    print('Didnt pass.')

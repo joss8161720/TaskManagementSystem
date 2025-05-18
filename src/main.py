@@ -22,4 +22,4 @@ while True:
         print("Exiting program")
         break
     elif user_input == "4":
-        task_manager.sort_tasks()
+        task_manager.sort()
