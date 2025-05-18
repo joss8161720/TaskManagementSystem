@@ -80,6 +80,6 @@ class TaskManager:
                 print(f"No task named '{task_name}'")
 
     def sort_tasks(self):
-        if self.category == category_input:
-            print(f"{self.category}: {category_input}")
+        if self.category == self.category:
+            print(f"{self.category}: {self.category}")
         
