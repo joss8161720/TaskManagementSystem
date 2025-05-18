@@ -9,6 +9,4 @@ class Task:
 
     #called in view_tasks(), used to make object data readable
     def __str__(self):
-        if self.dependencies == "":
-            self.dependencies = "none"
         return f"Name: {self.name} | Due Date: {self.due_date} | Category: {self.category} | Priority: {self.priority} | Dependencies: {self.dependencies}"

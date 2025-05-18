@@ -1,7 +1,6 @@
 #import Task module
 from classes.Task import *
-
-categories_list = []
+from classes.Logger import *
 
 class TaskManager:
 
@@ -37,27 +36,22 @@ class TaskManager:
         dependencies_input = input("Set Dependencies (Tasks to be completed before this task comma seperated, press enter for no dependencies) >> ")
         print(" ")
         
-        categories_list.append(category_input)
-
-
         #need to keep adding to dependencies to make them usefull
         #splits a sting into a list then remakes it as a string, if it equals "" return "" as value
         dependencies = ", ".join(dependencies_input.split()) if dependencies_input else ""
 
-        if dependencies != "":
+        valid_dependencies = []
+        if dependencies:
             dependencies_list = dependencies.split(", ")
-
-            for used_dep in dependencies_list:
-                found = False
-                for task in self.tasks:
-                    if used_dep == task.name:
-                        found = True
-                        break
-
-                if found:
-                    print(f"Dependency '{used_dep}' found.")
+            for dep_name in dependencies_list:
+                if any(task.name == dep_name for task in self.tasks):
+                    valid_dependencies.append(dep_name)
                 else:
-                    print(f"Warning: Dependency '{used_dep}' not found in existing tasks.")
+                    print(f"Error: Dependency '{dep_name}' not found. Task creation cancelled.")
+                    return  # Cancel task creation if dependency is invalid
+
+        dependencies = ", ".join(valid_dependencies)
+
 
         task = Task(
             name_input,
@@ -78,12 +72,16 @@ class TaskManager:
             print(f"{name_input} dependencies: {task.dependencies}")
         else:
             pass
+
+        self.notify_observers(f"\nTask '{task.name}' created.\n")
+
         
     #function for viewing tasks, uses enumerate to transform list of objects to a list of tuples, then uses __str__ function defined in Task class to print out english readable results
     def view_tasks(self):
         #checks if there if tasks has any entries
         if not self.tasks:
             print("No tasks to display")
+            return
 
         else:
             print("Your tasks:")
@@ -93,25 +91,49 @@ class TaskManager:
                 print(f"Task {i}:{task}")
         
     def mark_task_complete(self):
+
         task_name = input("Enter the name of the completed task: ")
+
         for task in self.tasks:
             if task.name == task_name:
+                
+                for other_task in self.tasks:
+                    if task.name in other_task.dependencies.split(", "):
+                        print(f"Cannot complete '{task_name}': It is a dependency for task '{other_task.name}'.")
+                        return
+                
                 self.tasks.remove(task)
                 print(f"Task '{task_name}' has been completed and removed")
-            else:
-                print(f"No task named '{task_name}'")
+                self.notify_observers(f"\nTask '{task_name}' deleted.\n")
+                return
 
-        
- 
+            
+        print(f"No task named '{task_name}'")
+
 
     def sort(self):
-        lc = len(categories_list)
-        for n in range(lc):
-            print(f"{categories_list[n]}:{str(self.tasks)}")
-            for category in self.categories:
-                if category == categories_list[n]:
-                    print("asdad")
-                    return
+        if not self.tasks:
+            print("No tasks to sort.")
+            return
+        
+        categories = {}
+
+        for task in self.tasks:
+           
+            if task.category not in categories:
+                categories[task.category] = []
+            categories[task.category].append(task)
+        
+        for category, tasks in categories.items():
+            print(f"\nCategory: {category}")
+            for task in tasks:
+                print(f"{task}")
                 
-                else:
-                    print('Didnt pass.')
+
+    def add_observer(self, observer):
+        self.observers.append(observer)
+
+
+    def notify_observers(self, message):
+        for observer in self.observers:
+            observer.update(message)

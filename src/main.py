@@ -1,14 +1,17 @@
 #Imports Task and TaskManager modules from classes
 from classes.Task import *
 from classes.TaskManager import *
+from classes.Logger import *
 
 #makes TaskManager functions callable 
 task_manager = TaskManager()
+logger = Logger()
+task_manager.add_observer(logger)
 
 #while loop for user to enter commands
 while True:
 
-    print(f"\nOptions:\n1: Add task\n2: View Tasks\n3: Mark Completed\n4: Sort\n5: Quit")
+    print(f"\nOptions:\n1: Add task\n2: View Tasks\n3: Mark Completed\n4: Sort by Category\n5: Quit")
     user_input = input(">> ")
     
     #takes user input and calls function from TaskManager according to the command entered
