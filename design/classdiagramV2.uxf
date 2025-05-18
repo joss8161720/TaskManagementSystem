@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>440</x><y>310</y><w>350</w><h>190</h></coordinates><panel_attributes>TaskManager
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>530</x><y>160</y><w>350</w><h>190</h></coordinates><panel_attributes>TaskManager
 --
 - tasks: list[Task]
 - observers: list[TaskObserver]
@@ -9,11 +9,11 @@
 + mark_completed()
 + register_observer()
 + notify_oberver()
-+ new(): TaskManager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>590</y><w>240</w><h>50</h></coordinates><panel_attributes>Logger
++ new(): TaskManager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>440</y><w>240</w><h>50</h></coordinates><panel_attributes>Logger
 --
-+ notify(task: TaskManager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>490</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>590</y><w>260</w><h>200</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>180;10;240;10;240;180;10;180</additional_attributes></element><element><id>UMLNote</id><coordinates><x>620</x><y>540</y><w>150</w><h>30</h></coordinates><panel_attributes>Observer
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>800</x><y>330</y><w>90</w><h>30</h></coordinates><panel_attributes>Facade
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>490</y><w>30</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>660</y><w>200</w><h>160</h></coordinates><panel_attributes>Task
++ notify(task: TaskManager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>340</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>440</y><w>260</w><h>200</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>180;10;240;10;240;180;10;180</additional_attributes></element><element><id>UMLNote</id><coordinates><x>710</x><y>390</y><w>150</w><h>30</h></coordinates><panel_attributes>Observer
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>890</x><y>180</y><w>90</w><h>30</h></coordinates><panel_attributes>Facade
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>340</y><w>30</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>510</y><w>200</w><h>160</h></coordinates><panel_attributes>Task
 --
 - title: str
 - due_date: str
@@ -23,7 +23,7 @@ bg=blue</panel_attributes><additional_attributes></additional_attributes></eleme
 - dependencies: list[tasks]
 --
 + status()
-+ __str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>530</x><y>150</y><w>60</w><h>110</h></coordinates><panel_attributes>Actor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>800</x><y>370</y><w>90</w><h>30</h></coordinates><panel_attributes>Singleton
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>190</y><w>40</w><h>140</h></coordinates><panel_attributes>lt=-
++ __str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>620</x><y>0</y><w>60</w><h>110</h></coordinates><panel_attributes>Actor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>890</x><y>220</y><w>90</w><h>30</h></coordinates><panel_attributes>Singleton
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>40</y><w>40</w><h>140</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element></diagram>

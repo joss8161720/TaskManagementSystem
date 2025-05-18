@@ -44,7 +44,6 @@ class TaskManager:
             due_date_input,
             category_input,
             priority_input,
-            False,
             dependencies_list
         )
 
@@ -67,6 +66,16 @@ class TaskManager:
             print("No tasks to display")
         else:
             print("Your tasks:")
-            #loops over lsit tasks and keeps track of the index of each item
+            #loops over list tasks and keeps track of the index of each item
             for i, task in enumerate(self.tasks, 1):
                 print(f"Task {i}:{task}")
+        
+    def mark_task_complete(self):
+        task_name = input("Enter the name of the completed task: ")
+        for task in self.tasks:
+            if task.name == task_name:
+                self.tasks.remove(task)
+                print(f"Task '{task_name}' has been completed and removed")
+            else:
+                print(f"No task named '{task_name}'")
+

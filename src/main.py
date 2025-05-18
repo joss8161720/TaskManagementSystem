@@ -16,4 +16,5 @@ while True:
         task_manager.add_tasks()
     elif user_input == "2":
         task_manager.view_tasks()
-    
+    elif user_input == "3":
+        task_manager.mark_task_complete()
